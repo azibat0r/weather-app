@@ -8,8 +8,6 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = "38669987bc4c5f44efec346bd77b5366";
-
   async function fetchWeather() {
     if (!city) return;
     setLoading(true);
@@ -17,9 +15,7 @@ function App() {
     setWeather(null);
 
     try {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-      );
+      const response = await fetch(`http://localhost:3000/weather?city=${city}`);
       if (!response.ok) throw new Error("City not found");
       const data = await response.json();
       setWeather(data);
