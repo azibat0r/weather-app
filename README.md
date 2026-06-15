@@ -1,4 +1,4 @@
-# 🌤 Weather App
+# Weather App
 
 A weather app built with React and Vite that fetches real-time weather data using the OpenWeatherMap API.
 
